@@ -6,7 +6,7 @@ public class QuickSort implements SortInterface {
         sort(u, 0, u.length - 1);
     }
 
-    private void sort(double[] a, int left, int right) {
+    private static void sort(double[] a, int left, int right) {
         if (right <= left) {
             return;
         }
@@ -15,7 +15,7 @@ public class QuickSort implements SortInterface {
         sort(a, i + 1, right);
     }
 
-    private int part(double[] a, int left, int right) {
+    private static int part(double[] a, int left, int right) {
         int i = left;
         int j = right;
         while (true) {
@@ -36,11 +36,11 @@ public class QuickSort implements SortInterface {
         return i;
     }
 
-    private boolean smaller(double x, double y) {
-        return (x < y);
+    private static boolean smaller(double x, double y) {
+        return x < y;
     }
 
-    private void swap(double[] a, int i, int j) {
+    private static void swap(double[] a, int i, int j) {
         double swap = a[i];
         a[i] = a[j];
         a[j] = swap;
