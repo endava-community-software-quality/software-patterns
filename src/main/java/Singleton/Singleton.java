@@ -26,19 +26,19 @@ package Singleton;
 
 public class Singleton {
 
-    private static Singleton uniqueInstance = new Singleton() ;
+    private static Singleton uniqueInstance = new Singleton();
 
     // Prevent clients from using the constructor
-    private Singleton() {
-    }
-
-    // Optional Constructor
-    // public Singleton() {
-    //     throw new UnsupportedOperationException();
+    // private Singleton() {
     // }
 
+    // Optional Constructor
+    public Singleton() {
+        throw new UnsupportedOperationException();
+    }
+
     //Control the accessible (allowed) instances
-    public static Singleton getinstance() {
+    public synchronized static Singleton getinstance() {
         return uniqueInstance;
     }
 
